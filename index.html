@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esrat Jebin Lira | Industrial & Production Engineering Professional</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>MD Ataur Rahman Mridha | Supply Chain Strategist & AI Researcher</title>
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #06b6d4 0%, #14b8a6 50%, #ef4444 100%);
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: #334155;
-            --text-primary: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --accent-cyan: #06b6d4;
-            --accent-teal: #14b8a6;
-            --accent-red: #ef4444;
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --color-bg-primary: #0f1419;
+            --color-bg-secondary: #1a1f36;
+            --color-bg-card: #252b42;
+            --color-accent-teal: #32b8c6;
+            --color-accent-cyan: #00d4d4;
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #e0e0e0;
+            --color-text-muted: #9ca3af;
+            --color-gold: #d4a574;
+            --color-purple: #a78bfa;
+            --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Consolas', monospace;
+            --space-section: 80px;
+            --space-large: 60px;
+            --space-medium: 40px;
+            --space-small: 20px;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        [data-theme="light"] {
-            --bg-primary: #f8fafc;
-            --bg-secondary: #ffffff;
-            --bg-card: #f1f5f9;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        body.light-mode {
+            --color-bg-primary: #f8f9fa;
+            --color-bg-secondary: #f0f3f8;
+            --color-bg-card: #ffffff;
+            --color-text-primary: #1a1a1a;
+            --color-text-secondary: #333333;
+            --color-text-muted: #666666;
         }
 
         * {
@@ -36,74 +40,92 @@
             box-sizing: border-box;
         }
 
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            font-family: var(--font-sans);
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-secondary);
             line-height: 1.6;
-            transition: var(--transition);
+            overflow-x: hidden;
+            transition: var(--transition-smooth);
         }
 
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
-            width: 100%;
-            background: var(--bg-secondary);
+            left: 0;
+            right: 0;
+            background: rgba(15, 20, 25, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: var(--shadow);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--primary-gradient);
+        body.light-mode nav {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-teal));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: 2px;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
+            align-items: center;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-primary);
+            color: var(--color-text-secondary);
             text-decoration: none;
             font-weight: 500;
-            transition: var(--transition);
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--accent-cyan);
+            color: var(--color-accent-cyan);
         }
 
         .theme-toggle {
-            background: var(--primary-gradient);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            color: white;
+            width: 50px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
             cursor: pointer;
-            font-size: 1rem;
-            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            padding: 2px;
+            transition: var(--transition-smooth);
         }
 
         .theme-toggle:hover {
-            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .toggle-circle {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .theme-toggle.active .toggle-circle {
+            transform: translateX(22px);
         }
 
         /* Hero Section */
@@ -112,10 +134,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 6rem 2rem 4rem;
-            background: var(--bg-primary);
+            background: linear-gradient(135deg, rgba(0, 212, 212, 0.08), rgba(50, 184, 198, 0.03));
+            padding: 2rem;
             position: relative;
             overflow: hidden;
+        }
+
+        body.light-mode .hero {
+            background: linear-gradient(135deg, rgba(0, 212, 212, 0.05), rgba(50, 184, 198, 0.02));
         }
 
         .hero::before {
@@ -123,300 +149,477 @@
             position: absolute;
             width: 500px;
             height: 500px;
-            background: var(--primary-gradient);
-            border-radius: 50%;
-            filter: blur(150px);
-            opacity: 0.2;
-            top: -200px;
-            right: -200px;
-            animation: float 6s ease-in-out infinite;
+            background: radial-gradient(circle, var(--color-accent-cyan), transparent);
+            opacity: 0.05;
+            animation: float 8s ease-in-out infinite;
+            top: -150px;
+            right: -150px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--color-accent-teal), transparent);
+            opacity: 0.05;
+            animation: float 10s ease-in-out infinite reverse;
+            bottom: -100px;
+            left: -100px;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(30px); }
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(40px, -40px) rotate(10deg); }
         }
 
         .hero-content {
+            position: relative;
+            z-index: 10;
             text-align: center;
             max-width: 900px;
-            z-index: 1;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(60px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: var(--primary-gradient);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-teal), #ff6b6b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: fadeInUp 1s ease;
+            line-height: 1.1;
+            font-weight: 900;
+            letter-spacing: -1px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        body.light-mode .hero h1 {
+            background: linear-gradient(135deg, #0099cc, #00a8d8, #ff5e5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero h2 {
-            font-size: 1.8rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease 0.2s backwards;
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--color-accent-cyan);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.4s backwards;
-        }
-
-        .badges {
+        .hero-badges {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
             justify-content: center;
-            margin-top: 2rem;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
         }
 
         .badge {
-            background: var(--bg-card);
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition);
-            animation: fadeInUp 1s ease 0.6s backwards;
+            display: inline-block;
+            background: rgba(0, 212, 212, 0.12);
+            color: var(--color-accent-cyan);
+            padding: 0.7rem 1.4rem;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(50, 184, 198, 0.2);
+            backdrop-filter: blur(10px);
+            transition: var(--transition-smooth);
+        }
+
+        body.light-mode .badge {
+            background: rgba(0, 150, 150, 0.1);
+            border-color: rgba(0, 150, 150, 0.3);
         }
 
         .badge:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-            background: var(--primary-gradient);
-            color: white;
+            background: rgba(0, 212, 212, 0.2);
+            transform: translateY(-3px);
         }
 
-        /* Section Styles */
-        section {
-            padding: 5rem 2rem;
+        .hero .tagline {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1.1rem 2.8rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-teal));
+            color: var(--color-bg-primary);
+            box-shadow: 0 10px 40px rgba(0, 212, 212, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 212, 212, 0.4);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--color-accent-cyan);
+            color: var(--color-accent-cyan);
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-accent-cyan);
+            color: var(--color-bg-primary);
+            transform: translateY(-4px);
+        }
+
+        /* Container */
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: var(--space-section) 0;
+            border-bottom: 1px solid rgba(50, 184, 198, 0.1);
+        }
+
+        body.light-mode section {
+            border-bottom-color: rgba(0, 0, 0, 0.08);
         }
 
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
             margin-bottom: 3rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            text-align: center;
+            font-weight: 900;
+            position: relative;
+            display: inline-block;
+            width: 100%;
         }
 
-        /* About Section */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-teal), #ff6b6b);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-accent-cyan);
+            font-size: 1.1rem;
+            margin: 2rem 0 3rem;
+            opacity: 0.85;
+        }
+
+        /* About Grid */
         .about-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
         }
 
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
 
-        .stat-cards {
+        .about-text p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .highlight {
+            color: var(--color-accent-cyan);
+            font-weight: 700;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .stat-card {
-            background: var(--bg-card);
             padding: 2rem;
-            border-radius: 20px;
+            background: var(--color-bg-card);
+            border: 1px solid rgba(50, 184, 198, 0.2);
+            border-radius: 12px;
             text-align: center;
-            transition: var(--transition);
-            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.light-mode .stat-card {
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-teal));
+            opacity: 0.1;
+            transition: left 0.4s ease;
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
         }
 
         .stat-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow);
-            border-color: var(--accent-cyan);
+            border-color: var(--color-accent-cyan);
+            box-shadow: 0 20px 50px rgba(0, 212, 212, 0.15);
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--color-accent-cyan);
+            margin-bottom: 0.5rem;
         }
 
         .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            opacity: 0.7;
+            font-weight: 600;
         }
 
         /* Timeline */
-        .timeline {
+        .experience-timeline {
             position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: var(--primary-gradient);
+            padding: 2rem 0;
+            margin-top: 3rem;
         }
 
         .timeline-item {
+            margin-bottom: 2.5rem;
+            padding-left: 3rem;
             position: relative;
-            margin-bottom: 3rem;
-            padding-left: 2rem;
+            opacity: 0;
+            animation: fadeInLeft 0.8s ease-out forwards;
         }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -3.5rem;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--accent-cyan);
-            border: 4px solid var(--bg-primary);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
-        .timeline-content {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 15px;
-            transition: var(--transition);
-        }
-
-        .timeline-content:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow);
-        }
-
-        .timeline-date {
-            color: var(--accent-teal);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-company {
-            color: var(--accent-cyan);
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-description {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .timeline-list {
-            list-style: none;
-            margin-left: 0;
-        }
-
-        .timeline-list li {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .timeline-list li::before {
-            content: '▹';
-            position: absolute;
             left: 0;
-            color: var(--accent-teal);
-            font-weight: bold;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--color-accent-cyan);
+            border-radius: 50%;
+            border: 3px solid var(--color-bg-primary);
+            box-shadow: 0 0 0 4px var(--color-accent-cyan);
+        }
+
+        body.light-mode .timeline-item::before {
+            border-color: var(--color-bg-primary);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 30px;
+            bottom: -2.5rem;
+            width: 2px;
+            background: linear-gradient(180deg, var(--color-accent-cyan), var(--color-accent-teal));
+            opacity: 0.3;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .exp-card {
+            background: var(--color-bg-card);
+            border: 1px solid rgba(50, 184, 198, 0.2);
+            padding: 1.8rem;
+            border-radius: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        body.light-mode .exp-card {
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .exp-card:hover {
+            transform: translateX(8px);
+            border-color: var(--color-accent-cyan);
+            box-shadow: 0 15px 40px rgba(0, 212, 212, 0.15);
+        }
+
+        .exp-title {
+            color: var(--color-accent-cyan);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-subtitle {
+            color: var(--color-accent-teal);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-date {
+            opacity: 0.6;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .exp-description {
+            opacity: 0.85;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .project-card {
-            background: var(--bg-card);
+            background: var(--color-bg-card);
+            border: 1px solid rgba(50, 184, 198, 0.2);
+            border-radius: 12px;
             padding: 2rem;
-            border-radius: 20px;
-            transition: var(--transition);
-            border: 2px solid transparent;
             cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        body.light-mode .project-card {
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-teal), #ff6b6b);
+            transition: left 0.4s ease;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
         }
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow);
-            border-color: var(--accent-teal);
+            border-color: var(--color-accent-cyan);
+            box-shadow: 0 25px 60px rgba(0, 212, 212, 0.2);
         }
 
         .project-icon {
-            font-size: 3rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
         }
 
-        .project-title {
-            font-size: 1.3rem;
+        .project-card h3 {
+            color: var(--color-accent-cyan);
+            margin-bottom: 0.7rem;
+            font-size: 1.2rem;
+        }
+
+        .project-card .meta {
+            color: var(--color-accent-teal);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
             font-weight: 600;
-            margin-bottom: 1rem;
         }
 
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+        .project-card p {
+            opacity: 0.8;
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+            flex-grow: 1;
         }
 
         .project-tags {
             display: flex;
-            flex-wrap: wrap;
             gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
         .tag {
-            background: var(--bg-secondary);
-            padding: 0.3rem 0.8rem;
+            display: inline-block;
+            background: rgba(0, 212, 212, 0.15);
+            color: var(--color-accent-cyan);
+            padding: 0.4rem 0.9rem;
             border-radius: 20px;
             font-size: 0.8rem;
-            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        body.light-mode .tag {
+            background: rgba(0, 150, 150, 0.1);
         }
 
         /* Skills Section */
@@ -424,905 +627,768 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .skill-category {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 20px;
-            transition: var(--transition);
+            background: var(--color-bg-card);
+            border: 1px solid rgba(50, 184, 198, 0.2);
+            padding: 1.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        body.light-mode .skill-category {
+            border-color: rgba(0, 0, 0, 0.1);
         }
 
         .skill-category:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow);
+            border-color: var(--color-accent-cyan);
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 212, 212, 0.15);
         }
 
-        .skill-category-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .skill-category h4 {
+            color: var(--color-accent-cyan);
+            font-size: 1.1rem;
+            margin-bottom: 1.3rem;
+            font-weight: 700;
         }
 
         .skill-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .skill-item:last-child {
+            margin-bottom: 0;
         }
 
         .skill-name {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            align-items: center;
+            margin-bottom: 0.6rem;
         }
 
-        .skill-bar {
-            height: 10px;
-            background: var(--bg-secondary);
-            border-radius: 10px;
-            overflow: hidden;
+        .skill-name span:first-child {
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
-        .skill-progress {
-            height: 100%;
-            background: var(--primary-gradient);
-            border-radius: 10px;
-            transition: width 1s ease;
+        .skill-badge {
+            display: inline-block;
+            background: rgba(0, 212, 212, 0.2);
+            color: var(--color-accent-cyan);
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
         }
 
         /* Awards Grid */
         .awards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
         .award-card {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(0, 212, 212, 0.1), rgba(50, 184, 198, 0.05));
+            border: 1px solid rgba(50, 184, 198, 0.2);
+            padding: 1.8rem;
+            border-radius: 10px;
             text-align: center;
-            transition: var(--transition);
-            border: 2px solid transparent;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        body.light-mode .award-card {
+            background: linear-gradient(135deg, rgba(0, 212, 212, 0.05), rgba(50, 184, 198, 0.02));
+            border-color: rgba(0, 0, 0, 0.1);
         }
 
         .award-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow);
-            border-color: var(--accent-red);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 212, 212, 0.2);
         }
 
         .award-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: bounce 2s ease-in-out infinite;
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            animation: bounce 2s infinite;
         }
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
         }
 
-        .award-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+        .award-card h4 {
+            color: var(--color-accent-cyan);
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
         }
 
-        .award-issuer {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+        .award-card p {
+            opacity: 0.75;
+            font-size: 0.85rem;
         }
 
-        /* Contact Section */
+        /* Contact Grid */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
-        .contact-card {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 20px;
+        .contact-item {
+            background: var(--color-bg-card);
+            border: 1px solid rgba(50, 184, 198, 0.2);
+            padding: 1.8rem;
+            border-radius: 10px;
             text-align: center;
-            transition: var(--transition);
-            text-decoration: none;
-            color: var(--text-primary);
-            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition-smooth);
         }
 
-        .contact-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow);
-            border-color: var(--accent-cyan);
+        body.light-mode .contact-item {
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-accent-cyan);
+            box-shadow: 0 15px 40px rgba(0, 212, 212, 0.15);
         }
 
         .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent-cyan);
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
         }
 
         .contact-label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: var(--color-accent-cyan);
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
-        .contact-value {
+        .contact-value a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
             font-weight: 600;
-            word-break: break-word;
+        }
+
+        .contact-value a:hover {
+            color: var(--color-accent-cyan);
         }
 
         /* Footer */
         footer {
-            background: var(--bg-secondary);
-            padding: 3rem 2rem;
             text-align: center;
-            color: var(--text-secondary);
+            padding: 2.5rem;
+            opacity: 0.7;
+            border-top: 1px solid rgba(50, 184, 198, 0.1);
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        body.light-mode footer {
+            border-top-color: rgba(0, 0, 0, 0.08);
         }
 
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-social a {
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .footer-social a:hover {
-            color: var(--accent-cyan);
-            transform: translateY(-5px);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero h2 {
-                font-size: 1.3rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-cards {
-                grid-template-columns: 1fr;
+            nav {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
             }
 
             .nav-links {
                 display: none;
             }
 
-            .mobile-menu-btn {
-                display: block;
+            .section-title {
+                font-size: 2rem;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .timeline {
-                padding-left: 2rem;
+            .btn {
+                width: 100%;
+                max-width: 280px;
             }
 
-            .timeline-item {
-                padding-left: 1rem;
+            .hero {
+                padding: 1rem;
             }
-        }
 
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+            section {
+                padding: 3rem 0;
+            }
 
-        /* Co-curricular Activities */
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+            .hero-badges {
+                gap: 0.6rem;
+            }
 
-        .activity-card {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 20px;
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-
-        .activity-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow);
-            border-color: var(--accent-teal);
-        }
-
-        .activity-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .activity-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .activity-org {
-            color: var(--accent-cyan);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .activity-period {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .activity-description {
-            color: var(--text-secondary);
+            .badge {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <div class="logo">EJL</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="theme-toggle" onclick="toggleTheme()">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+        <div class="nav-logo">ATAUR</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#professional">Professional</a>
+            <a href="#cocurricular">Co-Curricular</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="theme-toggle" onclick="toggleTheme()">
+            <div class="toggle-circle"></div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>ESRAT JEBIN LIRA</h1>
-            <h2>Industrial & Production Engineering Graduate</h2>
-            <p>Youth Leadership Ambassador | Supply Chain Optimizer | Data-Driven Problem Solver</p>
-            <div class="badges">
-                <span class="badge">🎯 Strategic Innovation</span>
-                <span class="badge">📊 Data Analytics</span>
-                <span class="badge">⚙️ Lean Manufacturing</span>
-                <span class="badge">🚀 Digital Transformation</span>
-                <span class="badge">📈 Process Optimization</span>
-                <span class="badge">🌐 Supply Chain Management</span>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>MD. Ataur Rahman Noman Mridha</h1>
+                <p class="subtitle">Supply Chain Strategist | AI Researcher | Operations Innovator</p>
+                <div class="hero-badges">
+                    <span class="badge">🌐 Supply Chain Next-Gen Leader</span>
+                    <span class="badge">⚙️ Lean Optimization Expert</span>
+                    <span class="badge">📊 Data-Driven Analyst</span>
+                    <span class="badge">🎓 FMCG Specialist</span>
+                    <span class="badge">🤖 AI Enthusiast</span>
+                    <span class="badge">💡 Innovation Champion</span>
+                </div>
+                <p class="tagline">Results-driven Industrial & Production Engineering graduate from AUST with proven expertise in supply chain management, procurement optimization, and data-driven decision-making. Specializing in lean manufacturing, AI-driven demand forecasting, and logistics coordination, I've delivered measurable results including 15% efficiency improvements and published research on AI implementation in Bangladesh's FMCG sector. As President of AUST Debating Club, I led organizational growth securing 9 lakh BDT in corporate partnerships and mentored 20+ nationally-recognized debaters. Finalist in Hult Prize Business Case Competition, I combine strategic thinking, technical expertise, and leadership excellence to drive operational transformation and innovation.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">🚀 Explore My Work</a>
+                    <a href="#contact" class="btn btn-secondary">💬 Let's Connect</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-            <div class="about-text">
-                <p>I am a highly motivated Industrial & Production Engineering graduate from Ahsanullah University of Science and Technology, driven by a passion for operational excellence and digital transformation. Currently serving as a Youth Leadership Ambassador at Ezzy Group, I lead strategic initiatives that bridge data analytics with business process improvement.</p>
-                <p>My experience spans across supply chain optimization, Lean manufacturing, and corporate strategy. I've successfully implemented data-driven solutions that enhance productivity and reduce operational bottlenecks. With expertise in time-motion studies, capacity planning, and workflow analysis, I bring a systematic approach to solving complex industrial challenges.</p>
-                <p>Beyond technical skills, I'm deeply committed to leadership development and community impact. Through my involvement with BYLC and various national-level debating tournaments, I've honed my ability to collaborate across diverse teams and drive meaningful change in dynamic environments.</p>
-            </div>
-            <div class="stat-cards">
-                <div class="stat-card">
-                    <div class="stat-number">80%</div>
-                    <div class="stat-label">Scholarship Awarded (ACSCP™)</div>
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I'm a <span class="highlight">results-driven Industrial & Production Engineering graduate</span> from AUST with a proven track record of delivering operational excellence across diverse domains.</p>
+                    <p>My expertise spans <span class="highlight">supply chain optimization, lean manufacturing, AI-driven forecasting, and strategic business development</span>. I've successfully improved manufacturing efficiency by <span class="highlight">15%</span> and co-founded a sustainable business reaching the <span class="highlight">Hult Prize Finals</span>.</p>
+                    <p>As <span class="highlight">President of AUST Debating Club</span>, I led the organization to unprecedented heights, securing <span class="highlight">9 lakh BDT in sponsorships</span> and organizing Bangladesh's largest inter-university debate competition.</p>
+                    <p>I'm passionate about <span class="highlight">innovation, data-driven decision making, and building high-performing teams</span> that drive measurable impact.</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">Top 20</div>
-                    <div class="stat-label">Supply Chain Research Challenge</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">4+</div>
-                    <div class="stat-label">National Tournaments Organized</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Professional Certifications</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Experience -->
-    <section id="experience">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-date">August 2024 – Present</div>
-                    <div class="timeline-title">Youth Leadership Ambassador</div>
-                    <div class="timeline-company">Ezzy Group | Corporate Strategy & Innovation</div>
-                    <div class="timeline-description">
-                        Leading strategic initiatives focused on digital transformation and business process excellence.
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">15%</div>
+                        <div class="stat-label">Efficiency Improvement</div>
                     </div>
-                    <ul class="timeline-list">
-                        <li>Spearhead data-driven decision making frameworks for operational efficiency improvements</li>
-                        <li>Collaborate with cross-functional teams to identify workflow gaps and implement digital solutions</li>
-                        <li>Develop presentation decks for client and investor meetings, enhancing internal communications</li>
-                        <li>Drive sustainability and digital transformation discussions across multiple business units</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-date">May 2024 – July 2024</div>
-                    <div class="timeline-title">Supply Chain & Process Optimization Intern</div>
-                    <div class="timeline-company">Lira Group of Industries</div>
-                    <div class="timeline-description">
-                        Conducted comprehensive analysis to optimize production workflows and reduce lead times.
+                    <div class="stat-card">
+                        <div class="stat-number">9 L+</div>
+                        <div class="stat-label">Sponsorship Secured</div>
                     </div>
-                    <ul class="timeline-list">
-                        <li>Executed time-motion studies and data analysis to identify critical process bottlenecks</li>
-                        <li>Reduced production lead time through systematic workflow optimization</li>
-                        <li>Coordinated quality assurance, supplier relationships, and logistics process improvements</li>
-                        <li>Implemented Lean tools including 5S methodology for enhanced operational efficiency</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-date">March 2024</div>
-                    <div class="timeline-title">Industrial Attachment Trainee</div>
-                    <div class="timeline-company">Bangladesh Industrial Technical Assistance Center (BITAC)</div>
-                    <div class="timeline-description">
-                        Gained hands-on expertise in industrial research, safety protocols, and manufacturing excellence.
+                    <div class="stat-card">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Debaters Mentored</div>
                     </div>
-                    <ul class="timeline-list">
-                        <li>Completed intensive training in industrial safety standards and Lean manufacturing principles</li>
-                        <li>Applied 5S methodology to enhance workspace organization and eliminate waste</li>
-                        <li>Developed practical skills in industrial research and process documentation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Co-curricular Activities -->
-    <section id="activities">
-        <h2 class="section-title">Leadership & Co-Curricular Activities</h2>
-        <div class="activities-grid">
-            <div class="activity-card">
-                <div class="activity-icon">🎤</div>
-                <div class="activity-title">Chief Organizer</div>
-                <div class="activity-org">AUST Debating Club</div>
-                <div class="activity-period">2022 – 2025</div>
-                <div class="activity-description">
-                    Successfully coordinated 4 consecutive national debating tournaments (4th, 5th, 6th & 7th AUSTDC Nationals), managing event logistics, sponsor relations, and participant coordination for large-scale competitive events.
-                </div>
-            </div>
-
-            <div class="activity-card">
-                <div class="activity-icon">📊</div>
-                <div class="activity-title">Volunteer & Data Analyst</div>
-                <div class="activity-org">Bangladesh Youth Leadership Center (BYLC)</div>
-                <div class="activity-period">December 2023 – December 2024</div>
-                <div class="activity-description">
-                    Collected and analyzed participant engagement data to evaluate program outcomes and provide actionable insights. Supported seamless execution of national leadership development programs.
-                </div>
-            </div>
-
-            <div class="activity-card">
-                <div class="activity-icon">🎯</div>
-                <div class="activity-title">Brand Representative</div>
-                <div class="activity-org">Interactive Cares</div>
-                <div class="activity-period">June 2024 – January 2025</div>
-                <div class="activity-description">
-                    Designed and executed outreach campaigns to increase brand awareness. Managed digital marketing activities including social media promotions and community engagement initiatives.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Signature Projects -->
-    <section id="projects">
-        <h2 class="section-title">Signature Projects & Research</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-icon">🏥</div>
-                <div class="project-title">Healthcare Supply Chain Optimization</div>
-                <div class="project-description">
-                    Ongoing thesis research applying Lean tools and methodologies to enhance efficiency in healthcare supply chain management, addressing critical bottlenecks in medical logistics.
-                </div>
-                <div class="project-tags">
-                    <span class="tag">Lean Manufacturing</span>
-                    <span class="tag">Healthcare</span>
-                    <span class="tag">Supply Chain</span>
-                    <span class="tag">Research</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">🤖</div>
-                <div class="project-title">AI-Driven Demand Forecasting Research</div>
-                <div class="project-description">
-                    Published research examining the impact of AI-driven demand forecasting on inventory management in Bangladesh's FMCG sector, exploring implementation challenges and optimization benefits.
-                </div>
-                <div class="project-tags">
-                    <span class="tag">AI/ML</span>
-                    <span class="tag">Published</span>
-                    <span class="tag">Inventory</span>
-                    <span class="tag">FMCG</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">🌬️</div>
-                <div class="project-title">Renewable Bladeless Turbine</div>
-                <div class="project-description">
-                    Designed and developed an innovative renewable energy solution under IPE 3104 Product Design course, focusing on sustainable engineering and clean energy generation.
-                </div>
-                <div class="project-tags">
-                    <span class="tag">Product Design</span>
-                    <span class="tag">Renewable Energy</span>
-                    <span class="tag">Innovation</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">⏱️</div>
-                <div class="project-title">Time-Motion Study & SMV Optimization</div>
-                <div class="project-description">
-                    Conducted comprehensive time and method studies at Lira Group, calculating SMV and performing capacity analysis to identify production bottlenecks and improve line balancing.
-                </div>
-                <div class="project-tags">
-                    <span class="tag">Industrial Engineering</span>
-                    <span class="tag">Process Optimization</span>
-                    <span class="tag">Data Analysis</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">📈</div>
-                <div class="project-title">Digital Transformation Strategy</div>
-                <div class="project-description">
-                    Supporting Ezzy Group's digital transformation initiatives through workflow analysis, digital solution identification, and cross-functional collaboration to modernize business processes.
-                </div>
-                <div class="project-tags">
-                    <span class="tag">Digital Strategy</span>
-                    <span class="tag">Innovation</span>
-                    <span class="tag">Business Process</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">🏆</div>
-                <div class="project-title">Supply Chain Research Challenge</div>
-                <div class="project-description">
-                    Secured Top 20 position nationally in the Supply Chain Research Challenge 5.0 organized by BIHRM Supply Chain Institute, demonstrating advanced analytical and research capabilities.
-                </div>
-                <div class="project-tags">
-                    <span class="tag">Competition</span>
-                    <span class="tag">Research</span>
-                    <span class="tag">Supply Chain</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2 class="section-title">Technical Skills & Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <div class="skill-category-title">
-                    <i class="fas fa-cogs"></i> Industrial Engineering
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Time & Method Study</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Lean Manufacturing & 5S</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Process Mapping & Kaizen</span>
-                        <span>88%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 88%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Line Balancing & Capacity Study</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Major Awards</div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="skill-category">
-                <div class="skill-category-title">
-                    <i class="fas fa-chart-line"></i> Analytical Tools
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Excel (Pivot, Macro, Analysis)</span>
-                        <span>92%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 92%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Data Analytics & Visualization</span>
-                        <span>88%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 88%"></div>
+        <!-- Professional Experience Section -->
+        <section id="professional">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">Driving operational excellence and innovation</p>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <div class="exp-title">🏢 Industrial Intern - Lira Group of Industries</div>
+                        <div class="exp-subtitle">Supply Chain & Operations Optimization</div>
+                        <div class="exp-date">June-July 2024</div>
+                        <div class="exp-description">
+                            ✅ Enhanced manufacturing efficiency by 15% through lean implementation<br>
+                            📋 Optimized production workflows & identified inefficiencies<br>
+                            🔗 Managed supplier evaluation & logistics coordination<br>
+                            💡 Gained deep FMCG operations insights & inventory optimization knowledge
+                        </div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>PowerPoint & Presentations</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>SolidWorks & CAD</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="skill-category">
-                <div class="skill-category-title">
-                    <i class="fas fa-project-diagram"></i> Management & Strategy
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Supply Chain Management</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Project Management</span>
-                        <span>88%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 88%"></div>
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <div class="exp-title">🏭 Industrial Intern - BITAC</div>
+                        <div class="exp-subtitle">Manufacturing & Metallurgy</div>
+                        <div class="exp-date">March-April 2024</div>
+                        <div class="exp-description">
+                            🔬 Hands-on experience with manufacturing processes & heat treatment<br>
+                            🛠️ Worked directly with industrial machinery & tools<br>
+                            📚 Applied theoretical concepts to real-world industrial scenarios<br>
+                            🎓 Deepened metallurgy & production optimization expertise
+                        </div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Strategic Thinking & Innovation</span>
-                        <span>92%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 92%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Quality Assurance & Six Sigma</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
+
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <div class="exp-title">📱 Social Media Executive - Newgen Technology</div>
+                        <div class="exp-subtitle">Digital Marketing & Brand Strategy</div>
+                        <div class="exp-date">December 2023 - March 2024</div>
+                        <div class="exp-description">
+                            🎨 5+ years creative experience in graphics & content creation<br>
+                            📊 Managed brand presence across diverse audiences<br>
+                            📈 Drove engagement through data-driven campaigns<br>
+                            🤝 Built meaningful customer connections through strategic content
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="skill-category">
-                <div class="skill-category-title">
-                    <i class="fas fa-users"></i> Soft Skills
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Leadership & Team Collaboration</span>
-                        <span>95%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Communication & Presentation</span>
-                        <span>93%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 93%"></div>
+        <!-- Co-Curricular Activities Section -->
+        <section id="cocurricular">
+            <h2 class="section-title">Co-Curricular Activities & Leadership</h2>
+            <p class="section-subtitle">Excellence beyond the classroom</p>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <div class="exp-title">💼 Business Case Competitor</div>
+                        <div class="exp-subtitle">Hult Prize & TexBiz 2025</div>
+                        <div class="exp-date">2024-2025</div>
+                        <div class="exp-description">
+                            🏆 Finalist - Hult Prize Business Case Competition 2025<br>
+                            🥈 Semi-Finalist - TexBIZ 2025 (Inter-University Competition)<br>
+                            💡 Co-founded sustainable business model<br>
+                            🎯 Applied strategic thinking to real-world challenges
+                        </div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Problem Solving & Decision Making</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Corporate Etiquette</span>
-                        <span>88%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 88%"></div>
+
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <div class="exp-title">👑 President</div>
+                        <div class="exp-subtitle">AUST Debating Club</div>
+                        <div class="exp-date">2025–Present</div>
+                        <div class="exp-description">
+                            🎯 Organized 7th & 6th AUSTDC Nationals (Bangladesh's largest debate competition)<br>
+                            💰 Secured 9 lakh BDT in partnerships with US Bangla, Walton, Akij Resources<br>
+                            ⭐ Identified & mentored 20+ debaters who won regional/national trophies<br>
+                            🔧 Crisis management & stakeholder satisfaction across 500+ participants
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Awards & Certifications -->
-    <section id="awards">
-        <h2 class="section-title">Awards & Professional Certifications</h2>
-        <div class="awards-grid">
-            <div class="award-card">
-                <div class="award-icon">🏆</div>
-                <div class="award-title">Top 20 - Supply Chain Research Challenge 5.0</div>
-                <div class="award-issuer">BIHRM Supply Chain Institute</div>
-            </div>
-
-            <div class="award-card">
-                <div class="award-icon">🎓</div>
-                <div class="award-title">80% Scholarship - ACSCP™ Program</div>
-                <div class="award-issuer">Affiliate Chartered Supply Chain Professional</div>
-            </div>
-
-            <div class="award-card">
-                <div class="award-icon">📜</div>
-                <div class="award-title">Project Management 101: PMP Certification</div>
-                <div class="award-issuer">Simplilearn SkillUp</div>
-            </div>
-
-            <div class="award-card">
-                <div class="award-icon">🔧</div>
-                <div class="award-title">Six Sigma Certification</div>
-                <div class="award-issuer">Simplilearn SkillUp</div>
-            </div>
-
-            <div class="award-card">
-                <div class="award-icon">🏭</div>
-                <div class="award-title">Industrial Safety Training</div>
-                <div class="award-issuer">BITAC</div>
-            </div>
-
-            <div class="award-card">
-                <div class="award-icon">💼</div>
-                <div class="award-title">Corporate Etiquette & Communication</div>
-                <div class="award-issuer">Ten Minute School</div>
-            </div>
-
-            <div class="award-card">
-                <div class="award-icon">🎤</div>
-                <div class="award-title">Presentation & Public Speaking</div>
-                <div class="award-issuer">Ten Minute School</div>
-            </div>
-
-            <div class="award-card">
-                <div class="award-icon">📢</div>
-                <div class="award-title">Promotional Activation Certification</div>
-                <div class="award-issuer">Bangladesh Youth Leadership Center</div>
-            </div>
-
-            <div class="award-card">
-                <div class="award-icon">📊</div>
-                <div class="award-title">Business Case Solving</div>
-                <div class="award-issuer">Professional Development</div>
-            </div>
-
-            <div class="award-card">
-                <div class="award-icon">✅</div>
-                <div class="award-title">Internship Completion Certificate</div>
-                <div class="award-issuer">Lira Group of Industries</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research & Publications -->
-    <section id="research">
-        <h2 class="section-title">Research & Publications</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-icon">📚</div>
-                <div class="project-title">The Impact of AI-Driven Demand Forecasting on Inventory Management</div>
-                <div class="project-description">
-                    Published in Supply Chain Insider Journal (2025). This research explores the challenges, benefits, and future potential of implementing AI for optimized inventory control in Bangladesh's FMCG sector, providing insights into digital transformation in supply chain management.
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <div class="exp-title">🎤 Executive Member</div>
+                        <div class="exp-subtitle">Bangladesh Debate Federation</div>
+                        <div class="exp-date">2024–Present</div>
+                        <div class="exp-description">
+                            📢 Negotiated sponsorships with MNCs and NGOs for national events<br>
+                            🌐 Organized large-scale debate programs ensuring smooth logistics<br>
+                            🤝 Managed stakeholder collaboration across universities nationwide<br>
+                            🏆 Promoted debating culture across Bangladesh
+                        </div>
+                    </div>
                 </div>
-                <div class="project-tags">
-                    <span class="tag">Published Research</span>
-                    <span class="tag">AI/ML</span>
-                    <span class="tag">Supply Chain</span>
-                    <span class="tag">FMCG</span>
-                    <span class="tag">2025</span>
+
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <div class="exp-title">🗣️ General Secretary</div>
+                        <div class="exp-subtitle">AUST Debating Club</div>
+                        <div class="exp-date">2023-2024</div>
+                        <div class="exp-description">
+                            📋 Organized 4th, 5th, 6th AUSTDC National Debate Championships<br>
+                            👥 Mentored debaters achieving regional & national success<br>
+                            📊 Managed club operations and event logistics<br>
+                            🎓 Promoted intellectual discourse and debate culture
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="exp-card">
+                        <div class="exp-title">🎨 Creative Portfolio & Visual Design</div>
+                        <div class="exp-subtitle">Graphic Design & Video Production</div>
+                        <div class="exp-date">Ongoing</div>
+                        <div class="exp-description">
+                            🎬 Expert in Adobe Creative Suite (Photoshop, Illustrator, Premiere Pro)<br>
+                            🖼️ Designed commercial campaigns, promotional teasers & visual content<br>
+                            ✂️ Specialized in storytelling through design & multimedia<br>
+                            📸 Portfolio: Pinterest & Facebook links coming soon
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Let's Connect</h2>
-        <div class="contact-grid">
-            <a href="mailto:esratjebinlira@gmail.com" class="contact-card">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <div class="contact-label">Email</div>
-                <div class="contact-value">esratjebinlira@gmail.com</div>
-            </a>
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title">Signature Projects</h2>
+            <p class="section-subtitle">Transforming ideas into measurable impact</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">⚙️</div>
+                    <h3>Manufacturing Process Optimization</h3>
+                    <div class="meta">Lira Group of Industries | June 2024</div>
+                    <p>Streamlined production workflows, implemented lean techniques, and achieved 15% efficiency improvement through data-driven recommendations and workflow analysis.</p>
+                    <div class="project-tags">
+                        <span class="tag">Lean Production</span>
+                        <span class="tag">Operations</span>
+                        <span class="tag">Data Analysis</span>
+                    </div>
+                </div>
 
-            <a href="tel:+8801757235083" class="contact-card">
-                <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                <div class="contact-label">Phone</div>
-                <div class="contact-value">+880 1757 235083</div>
-            </a>
+                <div class="project-card">
+                    <div class="project-icon">🤖</div>
+                    <h3>AI-Driven Demand Forecasting</h3>
+                    <div class="meta">Published Research | October 2025</div>
+                    <p>Developed AI/ML models for Bangladesh's FMCG sector. Published in Supply Chain Insider (80% ACSCP™ Scholarship), addressing inventory optimization challenges.</p>
+                    <div class="project-tags">
+                        <span class="tag">AI & ML</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">FMCG</span>
+                    </div>
+                </div>
 
-            <a href="https://linkedin.com/in/esratjebinlira" target="_blank" class="contact-card">
-                <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                <div class="contact-label">LinkedIn</div>
-                <div class="contact-value">linkedin.com/in/esratjebinlira</div>
-            </a>
+                <div class="project-card">
+                    <div class="project-icon">💡</div>
+                    <h3>Sustainable Business Model</h3>
+                    <div class="meta">Hult Prize & TexBiz 2025</div>
+                    <p>Co-founded innovative sustainable business reaching Hult Prize Finals. Applied strategic thinking, market analysis, and innovation to real-world commercial challenges.</p>
+                    <div class="project-tags">
+                        <span class="tag">Business Case</span>
+                        <span class="tag">Innovation</span>
+                        <span class="tag">Strategy</span>
+                    </div>
+                </div>
 
-            <div class="contact-card">
-                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <div class="contact-label">Location</div>
-                <div class="contact-value">ECB Chattar, Dhaka Cantonment 1206, Bangladesh</div>
+                <div class="project-card">
+                    <div class="project-icon">🦾</div>
+                    <h3>Hand-Gesture Robotic Arm</h3>
+                    <div class="meta">Engineering Project | Oct 2023-Feb 2024</div>
+                    <p>Designed & developed IoT-enabled robotic arm with Arduino integration, sensor technology, and gesture recognition. Showcased proficiency in electronics & mechanical design.</p>
+                    <div class="project-tags">
+                        <span class="tag">Robotics</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Electronics</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🎨</div>
+                    <h3>Graphics & Video Content</h3>
+                    <div class="meta">Commercial & Creative Projects</div>
+                    <p>Created engaging promo teasers, commercial campaigns, and visual content using Adobe Suite. Specialized in storytelling through design and video editing.</p>
+                    <div class="project-tags">
+                        <span class="tag">Design</span>
+                        <span class="tag">Video Editing</span>
+                        <span class="tag">Creative</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🏆</div>
+                    <h3>National Debate Championships</h3>
+                    <div class="meta">Event Organization | 4th-7th Nationals</div>
+                    <p>Organized Bangladesh's largest debate competitions, managing 500+ participants across inter-school, inter-college, and inter-university segments simultaneously.</p>
+                    <div class="project-tags">
+                        <span class="tag">Event Management</span>
+                        <span class="tag">Leadership</span>
+                        <span class="tag">Logistics</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>💼 Supply Chain & Operations</h4>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Procurement & Supplier Management</span>
+                            <span class="skill-badge">EXPERT</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Inventory Optimization</span>
+                            <span class="skill-badge">ADVANCED</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Lean Manufacturing</span>
+                            <span class="skill-badge">ADVANCED</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Logistics & Coordination</span>
+                            <span class="skill-badge">ADVANCED</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>📊 Data & Analytics</h4>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Data Analysis (Excel, Power BI)</span>
+                            <span class="skill-badge">ADVANCED</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>AI & ML Forecasting</span>
+                            <span class="skill-badge">ADVANCED</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python & SQL</span>
+                            <span class="skill-badge">PROFICIENT</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Predictive Analytics</span>
+                            <span class="skill-badge">ADVANCED</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>🎤 Leadership & Communication</h4>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Team Leadership</span>
+                            <span class="skill-badge">EXPERT</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Public Speaking & Debate</span>
+                            <span class="skill-badge">EXPERT</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Stakeholder Engagement</span>
+                            <span class="skill-badge">EXPERT</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Strategic Planning</span>
+                            <span class="skill-badge">ADVANCED</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>🛠️ Technical & Design</h4>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>SolidWorks CAD Design</span>
+                            <span class="skill-badge">ADVANCED</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Adobe Creative Suite</span>
+                            <span class="skill-badge">ADVANCED</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Video Editing (Premiere Pro)</span>
+                            <span class="skill-badge">ADVANCED</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>ERP Systems & Tools</span>
+                            <span class="skill-badge">PROFICIENT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Certifications -->
+        <section>
+            <h2 class="section-title">Awards & Certifications</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">🏆</div>
+                    <h4>Hult Prize Campus Finalist</h4>
+                    <p>2025 | Business Case Competition</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🥈</div>
+                    <h4>TexBiz Semi-Finalist</h4>
+                    <p>2025 | Inter-University Competition</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🏅</div>
+                    <h4>Debate Champion - ActionAID</h4>
+                    <p>2024 | Inter-University Competition</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🎖️</div>
+                    <h4>ATS-DUDS Debate Champion</h4>
+                    <p>2024 | Anti-Violent Extremism Debate</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🥉</div>
+                    <h4>Debate Runner-Up</h4>
+                    <p>2025 | Jahangirnagar University</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">📜</div>
+                    <h4>ACSCP™ Certified</h4>
+                    <p>80% Scholarship | Supply Chain Expert</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">📚</div>
+                    <h4>AI for Beginners</h4>
+                    <p>HP LIFE Certification</p>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">⚙️</div>
+                    <h4>Lean Six Sigma White Belt</h4>
+                    <p>Process Improvement Certified</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research">
+            <h2 class="section-title">Research & Publications</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>The Impact of AI-Driven Demand Forecasting on Inventory Management in Bangladesh's FMCG Sector</h3>
+                    <div class="meta">Published October 2025 | Supply Chain Insider, Vol. 16, Issue 01</div>
+                    <div class="exp-description">
+                        Comprehensive research on AI adoption barriers, data quality challenges, and recommendations for inventory optimization in Bangladesh's FMCG sector. Secured 80% ACSCP™ Scholarship for research excellence.
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">AI/ML</span>
+                        <span class="tag">Inventory</span>
+                        <span class="tag">FMCG</span>
+                        <span class="tag">Bangladesh</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Modeling of Tool Wear & Surface Roughness in Machining Titanium Alloy Using Nano Hybrid Cutting Fluid</h3>
+                    <div class="meta">Ongoing | AUST | January 2025-Present</div>
+                    <div class="exp-description">
+                        Advanced research on sustainable manufacturing through optimization of machining processes, tool wear analysis, and surface roughness prediction for enhanced industrial productivity.
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Manufacturing</span>
+                        <span class="tag">Sustainability</span>
+                        <span class="tag">Materials Science</span>
+                        <span class="tag">Machining</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Ready to collaborate on innovative solutions</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value"><a href="tel:+8801709784751">+880 1709 784 751</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value"><a href="mailto:nomanmridhawork@gmail.com">nomanmridhawork@gmail.com</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value"><a href="https://www.linkedin.com/in/md-ataur-rahman-noman-mridha/" target="_blank">Connect Here</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-label">Location</div>
+                    <div class="contact-value">Dhaka, Bangladesh</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-label">Portfolio</div>
+                    <div class="contact-value"><a href="https://nomanbeingataur.wordpress.com/" target="_blank">View Blog</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📚</div>
+                    <div class="contact-label">Address</div>
+                    <div class="contact-value">Mohammadpur, Dhaka</div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-social">
-                <a href="https://linkedin.com/in/esratjebinlira" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:esratjebinlira@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+8801757235083"><i class="fas fa-phone"></i></a>
-            </div>
-            <p>&copy; 2025 Esrat Jebin Lira. All rights reserved.</p>
-            <p>Industrial & Production Engineering Graduate | Youth Leadership Ambassador | Supply Chain Optimizer</p>
-        </div>
+        <p>&copy; 2025 MD Ataur Rahman Mridha. Crafted with precision, passion, and purpose. | All rights reserved.</p>
     </footer>
 
     <script>
-        // Theme Toggle
         function toggleTheme() {
             const body = document.body;
-            const icon = document.querySelector('.theme-toggle i');
-            
-            if (body.getAttribute('data-theme') === 'light') {
-                body.removeAttribute('data-theme');
-                icon.className = 'fas fa-moon';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.setAttribute('data-theme', 'light');
-                icon.className = 'fas fa-sun';
-                localStorage.setItem('theme', 'light');
-            }
+            const toggle = document.querySelector('.theme-toggle');
+
+            body.classList.toggle('light-mode');
+            toggle.classList.toggle('active');
+
+            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
         }
 
         // Load saved theme
-        window.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('load', () => {
             const savedTheme = localStorage.getItem('theme');
-            const icon = document.querySelector('.theme-toggle i');
-            
             if (savedTheme === 'light') {
-                document.body.setAttribute('data-theme', 'light');
-                icon.className = 'fas fa-sun';
+                document.body.classList.add('light-mode');
+                document.querySelector('.theme-toggle').classList.add('active');
             }
         });
 
-        // Smooth scrolling for navigation links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Animate skill bars on scroll
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progressBars = entry.target.querySelectorAll('.skill-progress');
-                    progressBars.forEach(bar => {
-                        bar.style.width = bar.style.width;
-                    });
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.skill-category').forEach(category => {
-            observer.observe(category);
-        });
-
-        // Add active class to nav links on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
